@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoanController;
+use App\Models\Loan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// all loans
+Route::get('/', [LoanController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// show create loan
+Route::get('/loans/create', [LoanController::class, 'create']);
+
+// Store loan data
+Route::post('/loans', [LoanController::class, 'store']);
+
+// show single loan
+Route::get('/loans/{loan}', [LoanController::class, 'show']);
