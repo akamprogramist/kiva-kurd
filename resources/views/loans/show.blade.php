@@ -55,7 +55,9 @@
     </div>
     <div class="md:w-[62%] md:mx-auto">
         <div class="p-5 space-y-5">
-            <img class="rounded-2xl" src="../assets/change.jpg" alt="" />
+            <img class="rounded-2xl w-full h-96 object-cover"
+                src="{{ $loan->logo ? asset('storage/' . $loan->logo) : asset('/images/no-image.jpg') }}"
+                alt="" />
             <p class="text-4xl font-bold">Ahmad's Story</p>
             <p>
                 {{ $loan->description }}

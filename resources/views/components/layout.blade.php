@@ -10,6 +10,17 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        "3xl": "0 5px 20px 2px rgba(0,0,0,0.1)",
+                    },
+                },
+            },
+        };
+    </script>
     <title>Kiva Kurd</title>
 </head>
 <div class="flex px-5 py-6 border-b border-green-600 justify-around">

@@ -39,12 +39,19 @@ class LoanController extends Controller
             'description' => 'required'
         ]);
 
-        // if ($request->hasFile('logo')) {
-        //     $formFields['logo'] = $request->file('logo')->store('logos', 'public');
-        // }
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
 
         Loan::create($formFields);
 
+        return redirect('/');
+    }
+
+    // Delete Listing
+    public function destroy(Loan $loan)
+    {
+        $loan->delete();
         return redirect('/');
     }
 }

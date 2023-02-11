@@ -23,5 +23,8 @@ Route::get('/loans/create', [LoanController::class, 'create']);
 // Store loan data
 Route::post('/loans', [LoanController::class, 'store']);
 
+// Delete listing
+Route::delete('/loans/{loan}', [LoanController::class, 'destroy']);
+
 // show single loan
 Route::get('/loans/{loan}', [LoanController::class, 'show']);

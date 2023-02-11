@@ -50,8 +50,7 @@
                 <label for="description" class="inline-block text-lg mb-2">
                     Description
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
-                    placeholder="Include tasks, requirements, salary, etc">
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10" placeholder="description">
         {{ old('description') }}
             </textarea>
                 @error('description')

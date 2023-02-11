@@ -4,7 +4,8 @@
 <x-card>
     <a href="/loans/{{ $loan->id }}"
         class="m-5 rounded-lg min-w-[75%] snap-start hover:shadow-3xl duration-300 md:min-w-[25%]">
-        <img src="../assets/landing.jpg" class="rounded-t-lg min-w-[75%]" alt="" />
+        <img src="{{ $loan->logo ? asset('storage/' . $loan->logo) : asset('/images/no-image.jpg') }}"
+            class="rounded-t-lg w-full max-h-64 object-cover min-w-[75%]" alt="" />
         <div class="p-5">
             <p class="text-xl mb-2 font-bold">{{ Str::limit($loan->title, 20) }} </p>
             <p max="25" class="mb-4 text-gray-700">
@@ -25,6 +26,12 @@
             <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
                 <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
             </div>
+            <form method="POST" action="/loans/{{ $loan->id }}">
+                @csrf
+                @method('DELETE')
+                <button class="text-red-500"><i class="fa-solid fa-trash"></i>
+                    Delete</button>
+            </form>
         </div>
     </a>
 </x-card>

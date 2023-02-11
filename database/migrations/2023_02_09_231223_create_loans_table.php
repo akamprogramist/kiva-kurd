@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('logo')->nullable();
             $table->string('location');
             $table->string('money');
             $table->longText('description');

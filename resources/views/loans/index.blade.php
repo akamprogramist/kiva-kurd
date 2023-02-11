@@ -12,7 +12,4 @@
             @endunless
         </div>
     </div>
-    {{-- <div class="mt-6 p-4">
-        {{ $loans->links() }}
-    </div> --}}
 </x-layout>
