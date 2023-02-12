@@ -2,32 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Loan;
 use App\Models\Invest;
 use Illuminate\Http\Request;
 
-class LoanController extends Controller
+class InvestController extends Controller
 {
-    // Show all loans
+    // Show all invests
     public function index()
     {
-        return view('loans.index', [
-            'loans' => Loan::all(),
+        return view('invests.index', [
+            'invests' => Invest::all()
         ]);
     }
 
     // Show single loan
-    public function show(Loan $loan)
+    public function show(Invest $invest)
     {
-        return view('loans.show', [
-            'loan' => $loan
+        return view('invests.show', [
+            'invest' => $invest
         ]);
     }
 
     // show create form
     public function create()
     {
-        return view('loans.create');
+        return view('invests.create');
     }
 
     // Store Listing Data
@@ -44,15 +43,15 @@ class LoanController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        Loan::create($formFields);
+        Invest::create($formFields);
 
         return redirect('/');
     }
 
     // Delete Listing
-    public function destroy(Loan $loan)
+    public function destroy(Invest $invest)
     {
-        $loan->delete();
+        $invest->delete();
         return redirect('/');
     }
 }
