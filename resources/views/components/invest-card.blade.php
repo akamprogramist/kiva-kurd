@@ -1,8 +1,9 @@
 @props(['invest'])
 <x-card>
-    <a href="" class="m-5 rounded-lg min-w-[75%] snap-start hover:shadow-3xl duration-300 md:min-w-[25%]">
+    <a href="/invests/{{ $invest->id }}"
+        class="m-5 rounded-lg min-w-[75%] snap-start hover:shadow-3xl duration-300 md:min-w-[25%]">
         <img src="{{ $invest->logo ? asset('storage/' . $invest->logo) : asset('/images/no-image.jpg') }}"
-            class="rounded-t-lg min-w-[75%]" alt="" />
+            class="rounded-t-lg w-full max-h-64 object-cover min-w-[75%]" alt="" />
         <div class="p-5">
             <p class="text-xl mb-2 font-bold">{{ Str::limit($invest->title, 20) }}</p>
             <p class="mb-4 text-gray-700">

@@ -4,7 +4,6 @@
             Invest in a Business
         </p>
         <div class="flex overflow-auto snap-x">
-
             @unless(count($invests) == 0)
                 @foreach ($invests as $invest)
                     <x-invest-card :invest="$invest" />
