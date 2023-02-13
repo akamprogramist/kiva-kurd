@@ -35,10 +35,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="Employees" class="inline-block text-lg mb-2">Amount Of Employees</label>
-                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="Employees"
-                    value="{{ old('Employees') }}" />
-                @error('Employees')
+                <label for="employees" class="inline-block text-lg mb-2">Amount Of employees</label>
+                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="employees"
+                    value="{{ old('employees') }}" />
+                @error('employees')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>

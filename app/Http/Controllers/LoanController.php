@@ -11,7 +11,7 @@ class LoanController extends Controller
     public function index()
     {
         return view('loans.index', [
-            'loans' => Loan::all(),
+            'loans' => Loan::latest(),
         ]);
     }
 
