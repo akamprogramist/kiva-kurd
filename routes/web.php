@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\InvestController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PartnerController;
 use App\Models\Buysell;
 
 /*
@@ -69,3 +70,18 @@ Route::delete('/buysells/{buysell}', [BuysellController::class, 'destroy']);
 
 // show single buysell
 Route::get('/buysells/{buysell}', [BuysellController::class, 'show']);
+
+// all partners
+Route::get('/partners', [PartnerController::class, 'index']);
+
+// show create loan
+Route::get('/partners/create', [PartnerController::class, 'create']);
+
+// Store partner data
+Route::post('/partners', [PartnerController::class, 'store']);
+
+// Delete listing
+Route::delete('/partners/{partner}', [PartnerController::class, 'destroy']);
+
+// show single partner
+Route::get('/partners/{partner}', [PartnerController::class, 'show']);

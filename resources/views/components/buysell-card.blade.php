@@ -1,13 +1,13 @@
 @props(['buysell'])
 <x-card>
-    <a href="/buysells/{{ $buysell->id }}"
-        class="m-5 rounded-lg min-w-[75%] snap-start hover:shadow-3xl duration-300 md:min-w-[25%]">
-        <div class="bg-white relative transition duration-500 rounded-lg">
+    <a href="/buysells/{{ $buysell->id }}" class="m-5 rounded-lg min-w-[75%] snap-start md:min-w-[25%]">
+        <div
+            class="bg-white relative transition hover:shadow-3xl border border-gray-100 shadow-sm duration-300 rounded-lg">
             <img src="{{ $buysell->logo ? asset('storage/' . $buysell->logo) : asset('/images/no-image.jpg') }}"
-                class="rounded-t-lg w-full max-h-64 object-cover min-w-[75%]" alt="" />
+                class="rounded-t-lg w-full h-56 object-cover min-w-[75%]" alt="" />
             <div class="py-6 px-8 rounded-lg bg-white">
                 <h1 class="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">
-                    {{ Str::limit($buysell->title, 20) }}
+                    {{ Str::limit($buysell->name, 20) }}
                 </h1>
                 <p class="text-gray-700 tracking-wide">
                     {{ Str::limit($buysell->description, 150) }}

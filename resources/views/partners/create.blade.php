@@ -2,12 +2,12 @@
     <div class="p-10 max-w-lg mx-auto my-24  bg-gray-50 border border-gray-200 rounded p-6">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Create For Investments
+                Find a Partner
             </h2>
-            <p class="mb-4">Explain your Business And Available Shares</p>
+            <p class="mb-4">Post What You Want</p>
         </header>
 
-        <form method="POST" action="/invests" enctype="multipart/form-data">
+        <form method="POST" action="/partners" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
                 <label for="name" class="inline-block text-lg mb-2">Name</label>
@@ -18,10 +18,10 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="title" class="inline-block text-lg mb-2">Title</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-                    value="{{ old('title') }}" />
-                @error('title')
+                <label for="department" class="inline-block text-lg mb-2">Department</label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="department"
+                    value="{{ old('department') }}" />
+                @error('department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -36,18 +36,26 @@
             </div>
 
             <div class="mb-6">
-                <label for="shares" class="inline-block text-lg mb-2">Amount Of Shares Available</label>
-                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="shares"
-                    value="{{ old('shares') }}" />
-                @error('shares')
+                <label for="products" class="inline-block text-lg mb-2">Amount Of products</label>
+                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="products"
+                    value="{{ old('products') }}" />
+                @error('products')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="money" class="inline-block text-lg mb-2">Amount Of Money (per share)</label>
-                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="money"
-                    value="{{ old('money') }}" />
-                @error('money')
+                <label for="employees" class="inline-block text-lg mb-2">Amount Of employees</label>
+                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="employees"
+                    value="{{ old('employees') }}" />
+                @error('employees')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mb-6">
+                <label for="clients" class="inline-block text-lg mb-2">Amount Of clients</label>
+                <input type="number" class="border border-gray-200 rounded p-2 w-full" name="clients"
+                    value="{{ old('clients') }}" />
+                @error('clients')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -76,7 +84,7 @@
 
             <div class="mb-6">
                 <button class="bg-green-600 text-white rounded py-2 px-4 hover:bg-green-700">
-                    Create For Investments
+                    Create A Post
                 </button>
 
                 <a href="/" class="text-black ml-4"> Back </a>

@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('buysells', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
+            $table->string('department');
             $table->string('logo')->nullable();
             $table->string('location');
+            $table->string('employees');
+            $table->string('products');
+            $table->string('clients');
             $table->string('money');
             $table->longText('description');
             $table->timestamps();

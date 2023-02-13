@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Buysell;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
-class BuysellController extends Controller
+class PartnerController extends Controller
 {
-    // Show all buysells
+    // Show all partners
     public function index()
     {
-        return view('buysells.index', [
-            'buysells' => Buysell::all()
+        return view('partners.index', [
+            'partners' => Partner::all(),
         ]);
     }
 
-    // Show single loan
-    public function show(Buysell $buysell)
+    // Show single partner
+    public function show(Partner $partner)
     {
-        return view('buysells.show', [
-            'buysell' => $buysell
+        return view('partners.show', [
+            'partner' => $partner
         ]);
     }
 
     // show create form
     public function create()
     {
-        return view('buysells.create');
+        return view('partners.create');
     }
 
     // Store Listing Data
@@ -39,7 +39,6 @@ class BuysellController extends Controller
             'employees' => 'required',
             'products' => 'required',
             'clients' => 'required',
-            'money' => 'required',
             'description' => 'required'
         ]);
 
@@ -47,15 +46,15 @@ class BuysellController extends Controller
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        Buysell::create($formFields);
+        Partner::create($formFields);
 
         return redirect('/');
     }
 
     // Delete Listing
-    public function destroy(Buysell $buysell)
+    public function destroy(Partner $partner)
     {
-        $buysell->delete();
+        $partner->delete();
         return redirect('/');
     }
 }

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Loan>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Partner>
  */
-class LoanFactory extends Factory
+class PartnerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,11 @@ class LoanFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'title' => fake()->sentence(),
+            'department' => fake()->sentence(),
             'location' => fake()->city(),
-            'money' => fake()->numberBetween(500, 900),
+            'employees' => fake()->numberBetween(1, 20),
+            'products' => fake()->numberBetween(1, 50),
+            'clients' => fake()->numberBetween(1, 20),
             'description' => fake()->paragraph(5),
         ];
     }

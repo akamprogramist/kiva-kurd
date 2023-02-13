@@ -33,8 +33,10 @@ class InvestController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
+            'name' => 'required',
             'title' => 'required',
             'location' => 'required',
+            'shares' => 'required',
             'money' => 'required',
             'description' => 'required'
         ]);

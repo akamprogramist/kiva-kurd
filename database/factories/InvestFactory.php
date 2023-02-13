@@ -17,8 +17,10 @@ class InvestFactory extends Factory
     public function definition()
     {
         return [
+            'name' => fake()->name(),
             'title' => fake()->sentence(),
             'location' => fake()->city(),
+            'shares' => fake()->numberBetween(10, 50),
             'money' => fake()->numberBetween(500, 900),
             'description' => fake()->paragraph(5),
         ];

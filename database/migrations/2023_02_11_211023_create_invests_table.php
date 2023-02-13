@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('invests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('title');
             $table->string('logo')->nullable();
             $table->string('location');
+            $table->string('shares');
             $table->string('money');
             $table->longText('description');
             $table->timestamps();

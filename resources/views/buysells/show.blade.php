@@ -5,18 +5,18 @@
                 src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
                 alt="" />
         </div>
-        <p class="text-2xl my-5 text-center font-bold">Odel Agency</p>
+        <p class="text-2xl my-5 text-center font-bold">{{ $buysell->name }}</p>
         <div class="flex my-5 text-center justify-around">
             <div>
-                <p class="text-2xl font-bold text-slate-700">8</p>
+                <p class="text-2xl font-bold text-slate-700">{{ $buysell->employees }}</p>
                 <p class="text-gray-500">Employees</p>
             </div>
             <div>
-                <p class="text-2xl font-bold text-slate-700">3</p>
+                <p class="text-2xl font-bold text-slate-700">{{ $buysell->products }}</p>
                 <p class="text-gray-500">Products</p>
             </div>
             <div>
-                <p class="text-2xl font-bold text-slate-700">45</p>
+                <p class="text-2xl font-bold text-slate-700">{{ $buysell->clients }}</p>
                 <p class="text-gray-500">Clients</p>
             </div>
         </div>
@@ -28,7 +28,7 @@
             </svg>
             <p class="text-xl font-semibold">{{ $buysell->location }}</p>
         </div>
-        <div class="flex justify-center text-gray-500 space-x-2">
+        <div class="flex justify-center text-gray-500 space-x-2 mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-7">
                 <path fill-rule="evenodd"
                     d="M7.5 5.25a3 3 0 013-3h3a3 3 0 013 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0112 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 017.5 5.455V5.25zm7.5 0v.09a49.488 49.488 0 00-6 0v-.09a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5zm-3 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
@@ -37,12 +37,25 @@
                     d="M3 18.4v-2.796a4.3 4.3 0 00.713.31A26.226 26.226 0 0012 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 01-6.477-.427C4.047 21.128 3 19.852 3 18.4z" />
             </svg>
 
-            <p class="text-xl font-semibold capitalize">social media agency</p>
+            <p class="text-xl font-semibold capitalize">{{ $buysell->department }}</p>
+        </div>
+        <div class="flex justify-center text-gray-500 space-x-2 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-7">
+                <path
+                    d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 01-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004zM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 01-.921.42z" />
+                <path fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v.816a3.836 3.836 0 00-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 01-.921-.421l-.879-.66a.75.75 0 00-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 001.5 0v-.81a4.124 4.124 0 001.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 00-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 00.933-1.175l-.415-.33a3.836 3.836 0 00-1.719-.755V6z"
+                    clip-rule="evenodd" />
+            </svg>
+
+
+
+            <p class="text-xl font-semibold capitalize">{{ $buysell->money }}</p>
         </div>
         <div class="flex justify-center">
             <button
                 class="mt-10 py-2 px-4 bg-green-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg hover:bg-green-700 transition duration-300">
-                Be a Partner
+                Buy This Business
             </button>
         </div>
         <div class="flex my-10 space-x-6 justify-center">
@@ -75,7 +88,7 @@
             <img class="rounded-2xl w-full h-96 object-cover"
                 src="{{ $buysell->logo ? asset('storage/' . $buysell->logo) : asset('/images/no-image.jpg') }}"
                 alt="" />
-            <p class="text-xl font-bold">About Name Company</p>
+            <p class="text-xl font-bold">About {{ $buysell->name }}</p>
             <p>
                 {{ $buysell->description }}
             </p>

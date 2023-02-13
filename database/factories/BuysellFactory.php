@@ -17,8 +17,12 @@ class BuysellFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->sentence(),
+            'name' => fake()->name(),
+            'department' => fake()->sentence(),
             'location' => fake()->city(),
+            'employees' => fake()->numberBetween(1, 20),
+            'products' => fake()->numberBetween(1, 50),
+            'clients' => fake()->numberBetween(1, 20),
             'money' => fake()->numberBetween(500, 900),
             'description' => fake()->paragraph(5),
         ];

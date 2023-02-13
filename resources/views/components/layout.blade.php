@@ -27,15 +27,15 @@
     <div>
         <a href="/" class="text-2xl text-green-600 font-extrabold">KivaKurd</a>
     </div>
-    <div class="justify-between space-x-7 mt-1">
-        <a href="/loans/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Loan</a>
-        <a href="/invests/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Invest</a>
-        <a href="/buysells/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Buy/Sell
-            Business</a>
-        <a href="/partners/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Partner</a>
-        <a href="#"
-            class="font-semibold px-5 border py-2 rounded-lg hover:text-white hover:bg-green-500 duration-150">Log
-            In</a>
+    <div class="justify-between mt-1">
+        <div class="space-x-3 md:space-x-7">
+            <a href="/loans/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Loan</a>
+            <a href="/invests/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Invest</a>
+            <a href="/buysells/create"
+                class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Buy/Sell</a>
+            <a href="/partners/create"
+                class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Partner</a>
+        </div>
 
     </div>
 </div>

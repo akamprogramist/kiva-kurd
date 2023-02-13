@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buysell;
 use App\Models\Loan;
 use App\Models\Invest;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -15,6 +16,7 @@ class LandingController extends Controller
         $loan = Loan::All();
         $invest = Invest::All();
         $buysell = Buysell::All();
-        return view('landing', ['loans' => $loan, 'invests' => $invest, 'buysells' => $buysell]);
+        $partner = Partner::All();
+        return view('landing', ['loans' => $loan, 'invests' => $invest, 'buysells' => $buysell, 'partners' => $partner]);
     }
 }
