@@ -3,11 +3,11 @@
         <div>
             <div class="flex">
                 <img class="rounded-full object-cover w-16 h-16"
-                    src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    src="{{ $loan->logo ? asset('storage/' . $loan->logo) : asset('/images/no-image.jpg') }}"
                     alt="" />
                 <p class="text-2xl mt-3 mx-5 font-bold">{{ $loan->name }}</p>
                 <p class="mt-4 mx-auto font-semibold text-gray-700">
-                    35 days remaining
+                    Posted : {{ $loan->created_at->diffForHumans() }}
                 </p>
             </div>
             <p class="text-2xl my-5 font-bold">
@@ -21,12 +21,8 @@
                 </svg>
                 <p class="font-semibold">{{ $loan->location }}</p>
             </div>
-            <div class="flex justify-between mx-1 mb-2 mt-3">
-                <span class="text-sm font-medium text-gray-500">75% FUNDED</span>
-                <span class="text-sm font-medium text-gray-500">${{ $loan->money }}</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
+            <div class="flex my-3">
+                <p class="text-xl font-semibold capitalize">Loan Amount is {{ $loan->money }}$</p>
             </div>
             <div class="flex my-5 space-x-5">
                 <select class="text-2xl font-semibold border-2 text-gray-600 rounded-xl px-5" name=""

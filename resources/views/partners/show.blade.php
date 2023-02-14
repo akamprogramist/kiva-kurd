@@ -2,7 +2,7 @@
      <div class="p-5 m-5 md:w-[62%] md:mx-auto">
          <div class="flex justify-center">
              <img class="rounded-full object-cover w-16 h-16"
-                 src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                 src="{{ $partner->logo ? asset('storage/' . $partner->logo) : asset('/images/no-image.jpg') }}"
                  alt="" />
          </div>
          <p class="text-2xl my-5 text-center font-bold">{{ $partner->name }}</p>

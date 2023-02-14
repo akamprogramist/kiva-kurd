@@ -91,10 +91,10 @@ Route::get('/partners/{partner}', [PartnerController::class, 'show']);
 
 
 // show Register/Create Form
-Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+// Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
-Route::post('/users', [UserController::class, 'store']);
+// Route::post('/users', [UserController::class, 'store']);
 
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');

@@ -31,11 +31,6 @@
         <div class="space-x-3 md:space-x-7">
             @auth
                 <div class="flex space-x-7">
-
-                    <li>
-                        <a href="/posts/manage" class="hover:text-green-600 duration-150"><i class="fa-solid fa-gear"></i>
-                            Manage Listings</a>
-                    </li>
                     <li>
                         <form method="POST" action="/logout" class="inline">
                             @csrf

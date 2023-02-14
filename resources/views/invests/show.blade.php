@@ -3,7 +3,7 @@
         <div>
             <div class="flex">
                 <img class="rounded-full object-cover w-16 h-16"
-                    src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    src="{{ $invest->logo ? asset('storage/' . $invest->logo) : asset('/images/no-image.jpg') }}"
                     alt="" />
                 <p class="text-2xl mt-3 mx-5 font-bold">{{ $invest->name }}</p>
                 <p class="mt-4 mx-auto font-semibold text-gray-700">
