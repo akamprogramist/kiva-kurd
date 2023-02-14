@@ -27,14 +27,33 @@
     <div>
         <a href="/" class="text-2xl text-green-600 font-extrabold">KivaKurd</a>
     </div>
-    <div class="justify-between mt-1">
+    <div class="justify-between list-none mt-1">
         <div class="space-x-3 md:space-x-7">
-            <a href="/loans/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Loan</a>
-            <a href="/invests/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Invest</a>
-            <a href="/buysells/create"
-                class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Buy/Sell</a>
-            <a href="/partners/create"
-                class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Partner</a>
+            @auth
+                <div class="flex space-x-7">
+
+                    <li>
+                        <a href="/posts/manage" class="hover:text-green-600 duration-150"><i class="fa-solid fa-gear"></i>
+                            Manage Listings</a>
+                    </li>
+                    <li>
+                        <form method="POST" action="/logout" class="inline">
+                            @csrf
+                            <button type="submit" class="hover:text-green-600 duration-150">
+                                <i class="fa-solid fa-door-closed"></i> Logout
+                            </button>
+                        </form>
+                    </li>
+                </div>
+            @else
+                <a href="/loans/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Loan</a>
+                <a href="/invests/create" class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Invest</a>
+                <a href="/buysells/create"
+                    class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Buy/Sell</a>
+                <a href="/partners/create"
+                    class="font-semibold py-2 rounded-lg hover:text-green-700 duration-150">Partner</a>
+            @endauth
+
         </div>
 
     </div>

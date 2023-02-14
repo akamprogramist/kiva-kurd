@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="p-10 max-w-lg mx-auto my-24  bg-gray-50 border border-gray-200 rounded p-6">
+    <div class="p-10 max-w-lg mx-auto my-24  bg-gray-50 border border-gray-200 rounded">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Create A Loan

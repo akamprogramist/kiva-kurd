@@ -16,12 +16,15 @@
                     class="mt-6 py-2 px-4 bg-green-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg hover:bg-green-700 transition duration-300">
                     Buy Now
                 </button>
-                <form method="POST" action="/buysells/{{ $buysell->id }}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="text-red-500"><i class="fa-solid fa-trash"></i>
-                        Delete</button>
-                </form>
+                @auth
+
+                    <form method="POST" action="/buysells/{{ $buysell->id }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text-red-500"><i class="fa-solid fa-trash"></i>
+                            Delete</button>
+                    </form>
+                @endauth
             </div>
             <div class="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
                 <span class="text-md font-semibold">$ {{ $buysell->money }}</span>

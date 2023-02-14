@@ -27,12 +27,15 @@
                 <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
                     <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
                 </div>
-                <form method="POST" action="/loans/{{ $loan->id }}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="text-red-500"><i class="fa-solid fa-trash"></i>
-                        Delete</button>
-                </form>
+                @auth
+
+                    <form method="POST" action="/loans/{{ $loan->id }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text-red-500"><i class="fa-solid fa-trash"></i>
+                            Delete</button>
+                    </form>
+                @endauth
             </div>
         </div>
     </a>

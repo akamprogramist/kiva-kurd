@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\BuysellController;
 use App\Models\Loan;
+use App\Models\Buysell;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\InvestController;
+use App\Http\Controllers\BuysellController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PartnerController;
-use App\Models\Buysell;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::get('/loans/create', [LoanController::class, 'create']);
 Route::post('/loans', [LoanController::class, 'store']);
 
 // Delete listing
-Route::delete('/loans/{loan}', [LoanController::class, 'destroy']);
+Route::delete('/loans/{loan}', [LoanController::class, 'destroy'])->middleware('auth');
 
 // show single loan
 Route::get('/loans/{loan}', [LoanController::class, 'show']);
@@ -49,7 +50,7 @@ Route::get('/invests/create', [InvestController::class, 'create']);
 Route::post('/invests', [InvestController::class, 'store']);
 
 // Delete listing
-Route::delete('/invests/{invest}', [InvestController::class, 'destroy']);
+Route::delete('/invests/{invest}', [InvestController::class, 'destroy'])->middleware('auth');
 
 // show single Invest
 Route::get('/invests/{invest}', [InvestController::class, 'show']);
@@ -66,7 +67,7 @@ Route::get('/buysells/create', [BuysellController::class, 'create']);
 Route::post('/buysells', [BuysellController::class, 'store']);
 
 // Delete listing
-Route::delete('/buysells/{buysell}', [BuysellController::class, 'destroy']);
+Route::delete('/buysells/{buysell}', [BuysellController::class, 'destroy'])->middleware('auth');
 
 // show single buysell
 Route::get('/buysells/{buysell}', [BuysellController::class, 'show']);
@@ -81,7 +82,25 @@ Route::get('/partners/create', [PartnerController::class, 'create']);
 Route::post('/partners', [PartnerController::class, 'store']);
 
 // Delete listing
-Route::delete('/partners/{partner}', [PartnerController::class, 'destroy']);
+Route::delete('/partners/{partner}', [PartnerController::class, 'destroy'])->middleware('auth');
 
 // show single partner
 Route::get('/partners/{partner}', [PartnerController::class, 'show']);
+
+
+
+
+// show Register/Create Form
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+
+// Create New User
+Route::post('/users', [UserController::class, 'store']);
+
+// Log User Out
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+// show Login form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+//  Log in user
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);

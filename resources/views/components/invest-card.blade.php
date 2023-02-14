@@ -25,12 +25,15 @@
                         Buy a Share
                     </button>
                 </div>
-                <form method="POST" action="/invests/{{ $invest->id }}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="text-red-500"><i class="fa-solid fa-trash"></i>
-                        Delete</button>
-                </form>
+                @auth
+
+                    <form method="POST" action="/invests/{{ $invest->id }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text-red-500"><i class="fa-solid fa-trash"></i>
+                            Delete</button>
+                    </form>
+                @endauth
             </div>
         </div>
     </a>

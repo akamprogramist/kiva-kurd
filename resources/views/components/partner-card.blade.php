@@ -24,12 +24,14 @@
                             &rarr;
                         </span>
                     </a>
-                    <form method="POST" action="/partners/{{ $partner->id }}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="text-red-500"><i class="fa-solid fa-trash"></i>
-                            Delete</button>
-                    </form>
+                    @auth
+                        <form method="POST" action="/partners/{{ $partner->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="text-red-500"><i class="fa-solid fa-trash"></i>
+                                Delete</button>
+                        </form>
+                    @endauth
                 </div>
             </article>
         </div>
