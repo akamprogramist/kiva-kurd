@@ -14,7 +14,7 @@
                     <span class="text-sm text-gray-400"><span
                             class="text-lg font-bold text-green-600">${{ $invest->money }}</span>
                         /Share</span>
-                    <button
+                    <button href="/invests/{{ $invest->id }}"
                         class="btn text-xs flex gap-2 font-semibold px-3 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-4 h-4">

@@ -12,7 +12,7 @@
                 <p class="text-gray-700 tracking-wide">
                     {{ Str::limit($buysell->description, 150) }}
                 </p>
-                <button
+                <button href="/buysells/{{ $buysell->id }}"
                     class="mt-6 py-2 px-4 bg-green-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg hover:bg-green-700 transition duration-300">
                     Buy Now
                 </button>

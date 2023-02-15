@@ -4,7 +4,7 @@
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Find a Partner
             </h2>
-            <p class="mb-4">Post What You Want</p>
+            <p class="mb-4">Explain your business and try to find partners</p>
         </header>
 
         <form method="POST" action="/partners" enctype="multipart/form-data">

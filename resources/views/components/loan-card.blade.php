@@ -20,12 +20,14 @@
                     </svg>
                     <p class="font-semibold">{{ $loan->location }}</p>
                 </div>
-                <div class="flex justify-between mx-1 mb-1 mt-3">
-                    <span class="text-sm font-medium text-gray-500">75% FUNDED</span>
-                    <span class="text-sm font-medium text-gray-500">${{ $loan->money }}</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                    <div class="bg-green-600 h-2 rounded-full" style="width: 75%"></div>
+                <div class="flex justify-around mt-5">
+                    <span class="text-sm text-gray-400"><span
+                            class="text-lg font-bold text-green-600">${{ $loan->money }} Required</span>
+                    </span>
+                    <button href="/loans/{{ $loan->id }}"
+                        class="btn text-xs flex font-semibold px-3 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 duration-300">
+                        Help This Business
+                    </button>
                 </div>
                 @auth
 
