@@ -7,7 +7,7 @@
             <img src="{{ $loan->logo ? asset('storage/' . $loan->logo) : asset('/images/no-image.jpg') }}"
                 class="rounded-t-lg w-full h-56 object-cover min-w-[75%]" alt="" />
             <div class="p-5">
-                <p class="text-xl mb-2 font-bold">{{ Str::limit($loan->name, 20) }} </p>
+                <p class="text-xl capitalize mb-2 font-bold">{{ Str::limit($loan->name, 20) }} </p>
                 <p max="25" class="mb-4 text-gray-700">
                     {{ Str::limit($loan->description, 150) }}
                 </p>

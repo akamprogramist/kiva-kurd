@@ -15,7 +15,7 @@
           </p>
           <button
               class="btn font-bold px-5 py-3 my-5 text-white bg-green-600 rounded-2xl hover:bg-green-700 duration-300">
-              View Online Events
+              Grap opportunities
           </button>
       </div>
   </div>
