@@ -21,7 +21,7 @@
               <h1 class="mb-5 text-gray-700 max-w-2xl text-4xl font-extrabold tracking-wide md:text-5xl xl:text-6xl">
                   Make a loan,<br /> <span
                       class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-green-600">
-                      change a
+                      Change a
                       life
                   </span></h1>
               <p class="mb-6 max-w-2xl font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">Kiva is a loan, not a
@@ -40,7 +40,7 @@
               </a>
               <a href="#"
                   class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100">
-                  Help A Business
+                  Help a Business
               </a>
           </div>
           <div class="mt-8 lg:mt-0 lg:col-span-5 lg:flex">
