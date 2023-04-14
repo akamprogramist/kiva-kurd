@@ -42,6 +42,7 @@ class InvestController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
+            $request->file('logo')->hashName();
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 

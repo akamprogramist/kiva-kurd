@@ -1,6 +1,5 @@
 @props(['loan'])
 
-
 <x-card>
     <a href="/loans/{{ $loan->id }}" class="m-5 rounded-lg min-w-[75%] snap-start md:min-w-[25%]">
         <div class="overflow-hidden rounded-lg hover:shadow-3xl border border-gray-100 shadow-sm duration-300">
